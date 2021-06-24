@@ -7,7 +7,7 @@ A marker displays the position of the ISS over a world map. The real time locati
 The tracker can be run by forking the repository (button in upper left), cloning it to your machine, and dragging the index.html file into your browser window.
 
 ## Future Improvements
-Right now, this doesn’t work over https, since the data source is http. I think this can be solved using a back end server. If the server retrieves the data, then perhaps the server can securely deliver the data to the browser. 
+Right now, this doesn’t work over https, since the data source is http. This can be solved using a back end server. If the server retrieves the data, then the server can securely deliver the data to the browser. 
 
 There is also a problem to be fixed when the ISS crosses the 180th meridian. The line wraps around the world in the wrong direction. I’m going to have to create a special handler which starts a new map line with a negative longitude and ends the old one with an imaginary longitudinal number over 180.
 
