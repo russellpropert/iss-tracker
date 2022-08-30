@@ -4,7 +4,7 @@
 A marker displays the position of the ISS over a world map. The real time location data is derived from [http://api.open-notify.org](http://api.open-notify.org). The location is updated every 10 seconds, leaving a map line along the way as the marker moves around the world.
 
 ## How To Run
-The tracker can be run by forking the repository (button in upper left), cloning it to your machine, and dragging the index.html file into your browser window.
+Fork the repository, clone it to your machine, and drag the index.html file into your browser window.
 
 ## Future Improvements
 Right now, this doesn’t work over https, since the data source is http. This can be solved using a back end server. If the server retrieves the data, then the server can securely deliver the data to the browser. 
