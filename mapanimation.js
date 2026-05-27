@@ -5,7 +5,7 @@ import MAPBOXGL_ACCESSTOKEN from "./config.js";
 
 mapboxgl.accessToken = MAPBOXGL_ACCESSTOKEN;
 
-let coordinates = []
+let coordinates = [];
 let map;
 let issMarker;
 let geojson = {};
@@ -19,7 +19,6 @@ const getIssLocation = async () => {
 
 const initMap = async () => {
   await getIssLocation();
-  console.log(coordinates[0]);
   map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/satellite-v9',
@@ -60,12 +59,11 @@ const initMap = async () => {
 
   issMarker = new mapboxgl.Marker().setLngLat(coordinates[0]).addTo(map);
 
-  setInterval(updateIssLocation, 10*1000); 
+  setInterval(updateIssLocation, 3000); 
 }
 
 const updateIssLocation = async () => {
   await getIssLocation();
-  console.log(coordinates);
   geojson.data.geometry.coordinates = coordinates;
   issMarker.setLngLat(coordinates[coordinates.length - 1]);
   map.getSource('lineCoordinates').setData(geojson.data);
