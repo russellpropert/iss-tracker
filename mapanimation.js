@@ -3,19 +3,28 @@ import MAPBOXGL_ACCESSTOKEN from "./config.js";
 //  https://open-notify-api.readthedocs.io/en/latest/iss_location.html
 //  https://docs.mapbox.com/mapbox-gl-js/example/live-update-feature/
 
-mapboxgl.accessToken = MAPBOXGL_ACCESSTOKEN;
+const coordinates = [];
 
-let coordinates = [];
 let map;
 let issMarker;
 let geojson = {};
+
+/* global mapboxgl */
+mapboxgl.accessToken = MAPBOXGL_ACCESSTOKEN;
 
 const getIssLocation = async () => {
   const url = 'http://api.open-notify.org/iss-now.json';
   const response = await fetch(url);
   const data = await response.json();
   coordinates.push([data.iss_position.longitude, data.iss_position.latitude]);
-}
+};
+
+const updateIssLocation = async () => {
+  await getIssLocation();
+  geojson.data.geometry.coordinates = coordinates;
+  issMarker.setLngLat(coordinates[coordinates.length - 1]);
+  map.getSource('lineCoordinates').setData(geojson.data);
+};
 
 const initMap = async () => {
   await getIssLocation();
@@ -37,7 +46,8 @@ const initMap = async () => {
           'coordinates': coordinates
         }
       }
-    }
+    };
+    
     map.addSource('lineCoordinates', geojson);
 
     map.addLayer({
@@ -54,21 +64,11 @@ const initMap = async () => {
         'line-width': 4
       }
     });
-
-  })
+  });
 
   issMarker = new mapboxgl.Marker().setLngLat(coordinates[0]).addTo(map);
 
   setInterval(updateIssLocation, 3000); 
-}
-
-const updateIssLocation = async () => {
-  await getIssLocation();
-  geojson.data.geometry.coordinates = coordinates;
-  issMarker.setLngLat(coordinates[coordinates.length - 1]);
-  map.getSource('lineCoordinates').setData(geojson.data);
-}
-
-
+};
 
 initMap();
