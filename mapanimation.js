@@ -67,8 +67,6 @@ const updateIssLocation = async () => {
   geojson.data.geometry.coordinates = coordinates;
   issMarker.setLngLat(coordinates[coordinates.length - 1]);
   map.getSource('lineCoordinates').setData(geojson.data);
-  map.panTo(coordinates[coordinates.length - 1]);
-
 }
 
 
