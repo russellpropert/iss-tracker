@@ -1,6 +1,5 @@
 import MAPBOXGL_ACCESSTOKEN from "./config.js";
 
-/* global mapboxgl */
 mapboxgl.accessToken = MAPBOXGL_ACCESSTOKEN;
 
 const intervalTime = 3000;

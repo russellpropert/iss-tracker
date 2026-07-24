@@ -1,0 +1,26 @@
+{
+  "name": "iss-tracker",
+  "version": "1.0.0",
+  "description": "Tracks the International Space Station with Mapbox",
+  "homepage": "https://github.com/russellpropert/iss-tracker#readme",
+  "bugs": {
+    "url": "https://github.com/russellpropert/iss-tracker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/russellpropert/iss-tracker.git"
+  },
+  "license": "MIT",
+  "author": "Russell Propert",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0"
+  }
+}
