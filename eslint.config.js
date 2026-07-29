@@ -5,7 +5,7 @@ import stylistic from '@stylistic/eslint-plugin';
 export default [
   // Don't lint dependencies or the gitignored local files
   {
-    ignores: ['node_modules/**', 'config.js']
+    ignores: ['node_modules/**', 'dist/**']
   },
 
   // ESLint's recommended rules (real-bug catches: unused vars, undefined names, etc.)
@@ -18,7 +18,6 @@ export default [
       sourceType: "module",
       globals: {
         ...globals.browser,   // fetch, setTimeout, console, Promise, document, ...
-        mapboxgl: "readonly", // the global from the Mapbox <script> tag
       },
     },
     plugins: {

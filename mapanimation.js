@@ -1,6 +1,5 @@
-import MAPBOXGL_ACCESSTOKEN from "./config.js";
-
-mapboxgl.accessToken = MAPBOXGL_ACCESSTOKEN;
+import * as mapboxgl from 'mapbox-gl/esm';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 const intervalTime = 3000;
 
@@ -97,6 +96,7 @@ const initMap = async () => {
   }
 
   map = new mapboxgl.Map({
+    accessToken: import.meta.env.VITE_MAPBOXGL_ACCESSTOKEN,
     container: 'map',
     style: 'mapbox://styles/mapbox/standard',
     center: markerPosition(),
