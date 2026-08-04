@@ -21,12 +21,12 @@ const geoJsonCoordinatesLastLineIndex = () => geojson.data.geometry.coordinates.
 
 const getIssLocation = async () => {
   try {
-    const url = 'http://api.open-notify.org/iss-now.json';
+    const url = 'https://api.wheretheiss.at/v1/satellites/25544';
     const response = await fetch(url);
     const data = await response.json();
 
-    const longitude = Number(data.iss_position.longitude);
-    const latitude = Number(data.iss_position.latitude);
+    const longitude = Number(data.longitude);
+    const latitude = Number(data.latitude);
 
     if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
       throw new Error('The API did not return valid numeric values for coordinates.');
