@@ -99,8 +99,8 @@ const initMap = async () => {
     accessToken: import.meta.env.VITE_MAPBOXGL_ACCESSTOKEN,
     container: 'map',
     style: 'mapbox://styles/mapbox/standard',
-    center: markerPosition(),
-    zoom: 3
+    center: [0, 0],
+    zoom: 2
   });
 
   map.on('load', () => {
@@ -121,8 +121,16 @@ const initMap = async () => {
       }
     });
 
+    const coordinates = markerPosition();
+
+    map.flyTo({
+      center: coordinates,
+      zoom: 3,
+      speed: 0.2
+    });
+
     issMarker = new mapboxgl.Marker()
-      .setLngLat(markerPosition())
+      .setLngLat(coordinates)
       .addTo(map);
 
     loop();
