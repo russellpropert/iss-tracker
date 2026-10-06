@@ -6,3 +6,4 @@ dist
 .env
 .playwright-mcp
 .playwright-cli
+.claude/settings.local.json
