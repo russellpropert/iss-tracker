@@ -1,11 +1,12 @@
 # ISS Tracker
+**Live Demo:** [https://iss-tracker-rp.vercel.app](https://iss-tracker-rp.vercel.app/)
 
 ## Description
 A marker displays the position of the ISS on a Mapbox globe and tracks where it has been with a line. The location data is derived from [wheretheiss.at](https://api.wheretheiss.at/v1/satellites/25544). The location is updated every 3 seconds, leaving a line along the way as the marker moves around the world.
 
 
 <p align="center">
-  <img style="margin: 25px 0" src="images/iss-tracker-screenshot.png" alt="ISS Tracker with live ground track" width="851">
+  <img src="images/iss-tracker-screenshot.png" alt="ISS Tracker with live ground track" width="100%">
 </p>
 
 
