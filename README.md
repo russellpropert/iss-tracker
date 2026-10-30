@@ -32,24 +32,3 @@ Developed and tested with Node.js 24.
 2. Display location data in the header.
 3. Fetch the OMM (Orbit Mean-Elements Message) from [CelesTrak](https://celestrak.org) or [Space-Track](https://www.space-track.org) and use [satellite.js](https://www.npmjs.com/package/satellite.js) to generate lines for the past and future trajectories using SGP4 (Simplified General Perturbations 4).
 4. Spread markers periodically throughout the lines indicating the date and time of the overpass.
-
-## MIT License
-Copyright (c) 2021 - 2026 Russell Propert
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
